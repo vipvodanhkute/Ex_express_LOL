@@ -1,0 +1,13 @@
+<%- include('../_layout/admin_header') %>
+<form action="/admin/users/login" method="post">
+    <div class="form-group">
+        <label for="">UserName</label>
+        <input type="text" placeholder="User Name" class="form-control" name="username">
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" placeholder="Password" class="form-control" name="password">
+    </div>
+    <button class="btn btn-primary">Login</button>
+</form>
+<%- include('../_layout/admin_footer') %>

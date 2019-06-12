@@ -1,0 +1,60 @@
+<%- include('../_layout/admin_header') %>
+<form action="/admin/champions/add-champion" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" type="text" name="name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+        <label for="">Title</label>
+        <input class="form-control" type="text" name="title" placeholder="Title" />
+    </div>
+    <div class="form-group">
+            <label for="">Dedescription</label>
+            <textarea class="form-control" name="desc" id="" cols="30" rows="10" placeholder="Dedescription"></textarea>
+        </div>
+    <div class="form">
+        <label for="">Image</label>
+        <input type="file" name="image">
+    </div>
+    <div class="form-group">
+        <label for="">Tags</label>
+        <select class="form-control" name="tags" id="">
+                <% tags.forEach(tag=>{ %>
+                        <option value="<%= tag.tag %>"><%= tag.tag %></option>
+                    <% }) %>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="">Passive</label>
+        <input class="form-control" type="text" name="passive" placeholder="Passive" />
+        <textarea class="form-control" name="descp" id="" cols="30" rows="10" placeholder="Dedescription Skil Passive"></textarea>
+        <input type="file" name="image0">
+    </div>
+    <div class="form-group">
+        <label for="">Skill 1</label>
+        <input class="form-control" type="text" name="skill1" placeholder="Skill 1" />
+        <textarea class="form-control" name="desc1" id="" cols="30" rows="10" placeholder="Dedescription Skill 1"></textarea>
+        <input type="file" name="image1">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 2</label>
+            <input class="form-control" type="text" name="skill2" placeholder="Skill 2" />
+            <textarea class="form-control" name="desc2" id="" cols="30" rows="10" placeholder="Dedescription Skill 2"></textarea>
+            <input type="file" name="image2">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 3</label>
+            <input class="form-control" type="text" name="skill3" placeholder="Skill 3" />
+            <textarea class="form-control" name="desc3" id="" cols="30" rows="10" placeholder="Dedescription Skill 3"></textarea>
+            <input type="file" name="image3">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 4</label>
+            <input class="form-control" type="text" name="skill4" placeholder="Skill 4" />
+            <textarea class="form-control" name="desc4" id="" cols="30" rows="10" placeholder="Dedescription Skill 4"></textarea>
+            <input type="file" name="image4">
+    </div>
+    <button class="btn btn-primary">Add</button>
+</form>
+<%- include('../_layout/admin_footer') %>

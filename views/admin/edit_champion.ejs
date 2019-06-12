@@ -1,0 +1,96 @@
+<%- include('../_layout/admin_header') %>
+<form action="/admin/champions/edit-champion/<%= champion.name %>?id=<%= champion._id %>" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" type="text" name="name" value="<%= champion.name %>" placeholder="Name" />
+        <input type="hidden" name="pname" value="<%= champion.name %>">
+    </div>
+    <div class="form-group">
+        <label for="">Title</label>
+        <input class="form-control" type="text" name="title" value="<%= champion.title %>" placeholder="Title" />
+    </div>
+    <div class="form-group">
+            <label for="">Dedescription</label>
+            <textarea class="form-control" name="desc" id="" cols="30" rows="10" placeholder="Dedescription"><%= champion.desc %></textarea>
+        </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%=champion.img %>" class="d-block" alt="">
+    </div>
+    <div class="form">
+        <label for="">Image</label>
+        <input type="file" name="image">
+        <input type="hidden" name="pimage" value="<%= champion.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Tags</label>
+        <select class="form-control" name="tags" id="">
+                <% tags.forEach(tag=>{ %>
+                        <option 
+                        value="<%= tag.tag %>""
+                        <% if(champion.tags==tag.tag){ %>
+                        selected="selected"
+                        <% } %> 
+                            "><%= tag.tag %></option>
+                    <% }) %>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="">Passive</label>
+        <input class="form-control" type="text" name="passive" value="<%= champion.passive.title %>" placeholder="Passive" />
+        <textarea class="form-control" name="descp" id="" cols="30" rows="10" placeholder="Dedescription Skil Passive"><%= champion.passive.desc %></textarea>
+        <input type="file" name="image0">
+        <input type="hidden" name="pimage0" value="<%= champion.passive.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%=champion.passive.img %>" class="d-block" alt="">
+    </div>
+    <div class="form-group">
+        <label for="">Skill 1</label>
+        <input class="form-control" type="text" name="skill1" value="<%= champion.skill1.title %>" placeholder="Skill 1" />
+        <textarea class="form-control" name="desc1" id="" cols="30" rows="10" placeholder="Dedescription Skill 1"><%= champion.skill1.desc %></textarea>
+        <input type="file" name="image1">
+        <input type="hidden" name="pimage1" value="<%= champion.skill1.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%= champion.skill1.img %>" class="d-block" alt="">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 2</label>
+            <input class="form-control" type="text" name="skill2" value="<%= champion.skill2.title %>" placeholder="Skill 2" />
+            <textarea class="form-control" name="desc2" id="" cols="30" rows="10" placeholder="Dedescription Skill 2"><%= champion.skill2.desc %></textarea>
+            <input type="file" name="image2">
+            <input type="hidden" name="pimage2" value="<%= champion.skill2.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%= champion.skill2.img %>" class="d-block" alt="">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 3</label>
+            <input class="form-control" type="text" name="skill3" value="<%= champion.skill3.title %>"" placeholder="Skill 3" />
+            <textarea class="form-control" name="desc3" id="" cols="30" rows="10" placeholder="Dedescription Skill 3"><%= champion.skill3.desc %></textarea>
+            <input type="file" name="image3">
+            <input type="hidden" name="pimage3" value="<%= champion.skill3.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%= champion.skill3.img %>" class="d-block" alt="">
+    </div>
+    <div class="form-group">
+            <label for="">Skill 4</label>
+            <input class="form-control" type="text" name="skill4" value="<%= champion.skill4.title %>" placeholder="Skill 4" />
+            <textarea class="form-control" name="desc4" id="" cols="30" rows="10" placeholder="Dedescription Skill 4"><%= champion.skill4.desc %></textarea>
+            <input type="file" name="image4">
+            <input type="hidden" name="pimage4" value="<%= champion.skill4.img %>">
+    </div>
+    <div class="form-group">
+        <label for="">Current</label>
+        <img src="/champion_images/<%= champion._id %>/<%= champion.skill4.img %>" class="d-block" alt="">
+    </div>
+    <button class="btn btn-primary">Edit</button>
+</form>
+<%- include('../_layout/admin_footer') %>

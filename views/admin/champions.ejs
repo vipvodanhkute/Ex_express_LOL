@@ -1,0 +1,25 @@
+<%- include('../_layout/admin_header') %>
+<a class="btn btn-primary" href="/admin/champions/add-champion">Add Champion</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% champions.forEach(champion=>{ %>
+        <tr>
+            <td><%= champion.name %></td>
+            <td><%= champion.title %></td>
+            <td><img src="/champion_images/<%= champion._id %>/<%= champion.img %>" width="100px" height="100px" alt=""></td>
+            <td><a href="/admin/champions/edit-champion?id=<%= champion._id %>">Edit</a></td>
+            <td><a href="/admin/champions/delete-champion?id=<%= champion._id %>">Delete</a></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('../_layout/admin_footer') %>

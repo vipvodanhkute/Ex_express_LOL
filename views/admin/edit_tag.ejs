@@ -1,0 +1,9 @@
+<%- include('../_layout/admin_header') %>
+<form action="/admin/tags/edit-tag/<%= tag._id %>" method="POST">
+    <div class="form-group">
+        <label for="">Tag</label>
+        <input class="form-control" type="text" name="tag" value="<%= tag.tag %>">
+    </div>
+    <input type="submit" value="Edit">
+</form>
+<%- include('../_layout/admin_footer') %>

@@ -1,0 +1,21 @@
+<%- include('../_layout/admin_header') %>
+<a class="btn btn-primary" href="/admin/tags/add-tag">Add Tag</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tag</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tags.forEach(function(tag){ %>
+            <tr>
+                <td><%= tag.tag %></td>
+                <td><a href="/admin/tags/edit-tag/<%= tag._id %>">Edit</a></td>
+                <td><a href="/admin/tags/delete-tag/<%= tag._id %>"> Delte</a</td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('../_layout/admin_footer') %>

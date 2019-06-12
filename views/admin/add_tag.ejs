@@ -1,0 +1,9 @@
+<%- include('../_layout/admin_header') %>
+<form action="/admin/tags/add-tag" method="post">
+    <div class="form-group">
+        <label for="">Tag</label>
+        <input type="text" placeholder="Tag" class="form-control" name="tag">
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>
+<%- include('../_layout/admin_footer') %>

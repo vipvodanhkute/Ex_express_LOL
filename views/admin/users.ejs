@@ -1,0 +1,23 @@
+<%- include('../_layout/admin_header') %>
+<a class="btn btn-primary" href="/admin/users/add-user">Add User</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(function(user){ %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.username %></td>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#"> Delte</a</td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('../_layout/admin_footer') %>
